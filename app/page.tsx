@@ -4,7 +4,7 @@ import Gallery from "@/components/Gallery/Gallery";
 import { Hero } from "@/components/Hero/Hero";
 import HowWeWork from "@/components/HowWeWork/HowWeWork";
 import PricingCards from "@/components/PricingCards/PricingCards";
-
+import Link from "next/link";
 export default function Home() {
   return (
    <>
@@ -27,14 +27,16 @@ export default function Home() {
       
       <h3 className="text-2xl md:text-3xl font-semibold mb-8">Popular Destinations</h3>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-        {/* 日本 */}
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
-          <img src="https://www.nicolelabarge.com/japanese-landmarks-in-japan/senso-ji-temple-tokyo/" alt="Japan" className="w-full h-48 object-cover" />
-          <div className="p-4 text-center">
-            <h4 className="text-xl font-bold">Japan</h4>
-            <p className="text-gray-600">Etiquette & Taboos</p>
-          </div>
-        </div>
+       {/* 日本 */}
+<Link href="/countries/japan">
+  <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition cursor-pointer">
+    <img src="https://www.nicolelabarge.com/japanese-landmarks-in-japan/senso-ji-temple-tokyo/" alt="Japan" className="w-full h-48 object-cover" />
+    <div className="p-4 text-center">
+      <h4 className="text-xl font-bold">Japan</h4>
+      <p className="text-gray-600">Etiquette & Taboos</p>
+    </div>
+  </div>
+</Link>
         
         {/* 泰国 */}
         <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
