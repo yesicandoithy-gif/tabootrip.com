@@ -7,7 +7,6 @@ export default function IndiaPage() {
       <p className="text-center text-lg text-gray-600 mb-12">Essential Do's and Don'ts for a respectful journey in India</p>
 
       <div className="grid md:grid-cols-2 gap-12">
-        {/* Do's */}
         <div className="bg-green-50 rounded-xl p-8 border border-green-200">
           <h2 className="text-3xl font-bold text-green-800 mb-6">✓ Do's</h2>
           <ul className="space-y-4 text-lg">
@@ -20,5 +19,24 @@ export default function IndiaPage() {
           </ul>
         </div>
 
-        {/* Don'ts */}
-        <div className="bg-red-50 rounded-xl p-
+        <div className="bg-red-50 rounded-xl p-8 border border-red-200">
+          <h2 className="text-3xl font-bold text-red-800 mb-6">✗ Don'ts</h2>
+          <ul className="space-y-4 text-lg">
+            <li className="flex items-start"><span className="text-red-600 font-bold mr-3">•</span> Don't touch anyone with feet or point soles at people</li>
+            <li className="flex items-start"><span className="text-red-600 font-bold mr-3">•</span> Don't photograph people without permission</li>
+            <li className="flex items-start"><span className="text-red-600 font-bold mr-3">•</span> Don't display public affection</li>
+            <li className="flex items-start"><span className="text-red-600 font-bold mr-3">•</span> Don't touch sacred cows or disturb them</li>
+            <li className="flex items-start"><span className="text-red-600 font-bold mr-3">•</span> Don't wear shoes inside religious places</li>
+            <li className="flex items-start"><span className="text-red-600 font-bold mr-3">•</span> Don't discuss sensitive topics like caste openly</li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="mt-12 text-center">
+        <a href="/" className="bg-green-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-green-600 inline-block">
+          Back to Home
+        </a>
+      </div>
+    </div>
+  );
+}
