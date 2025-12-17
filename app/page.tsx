@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 
 const countries = [
@@ -12,40 +12,63 @@ const countries = [
   { href: "/countries/saudi-arabia", en: "Saudi Arabia", cn: "沙特阿拉伯" },
 ];
 
-export default function Home() {
-  const [lang, setLang] = useState("en");
+const translations = {
+  en: {
+    heroTitle: "Avoid Cultural Taboos Abroad",
+    heroSubtitle: "Your Guide to Travel Etiquette & Cultural Tips Worldwide",
+    searchPlaceholder: "Search Countries...",
+    searchBtn: "Search",
+    popular: "Popular Destinations",
+    cardSubtitle: "Etiquette & Taboos",
+  },
+  cn: {
+    heroTitle: "避免国外文化禁忌",
+    heroSubtitle: "全球旅行礼仪与文化提示指南",
+    searchPlaceholder: "搜索国家...",
+    searchBtn: "搜索",
+    popular: "热门目的地",
+    cardSubtitle: "礼仪与禁忌",
+  },
+};
 
-  const t = {
-    title: lang === "en" ? "Avoid Cultural Taboos Abroad" : "避免国外文化禁忌",
-    subtitle: lang === "en" ? "Your Guide to Travel Etiquette & Cultural Tips Worldwide" : "全球旅行礼仪与文化提示指南",
-    searchPlaceholder: lang === "en" ? "Search Countries..." : "搜索国家...",
-    searchBtn: lang === "en" ? "Search" : "搜索",
-    popular: lang === "en" ? "Popular Destinations" : "热门目的地",
-    cardSubtitle: lang === "en" ? "Etiquette & Taboos" : "礼仪与禁忌",
-  };
+export default function Home({ params: { lang = "en" } }: { params?: { lang: "en" | "cn" } }) {
+  const currentLang = lang === "cn" ? "cn" : "en";
+  const t = translations[currentLang];
 
   return (
     <>
-      {/* Hero 保持不变 */}
+      {/* Hero 区 - 标题切换 */}
+      <section className="relative h-screen">
+        {/* 背景视频保持不变 */}
+        <div className="absolute inset-0">
+          {/* 你的 Video 组件或背景 */}
+        </div>
 
-      {/* 语言切换按钮 */}
-      <div className="fixed top-4 right-4 z-50">
-        <button
-          onClick={() => setLang(lang === "en" ? "cn" : "en")}
-          className="bg-white text-gray-800 px-4 py-2 rounded-full shadow-lg hover:shadow-xl transition font-semibold"
-        >
-          {lang === "en" ? "中文" : "English"}
-        </button>
-      </div>
+        <div className="relative z-10 flex flex-col items-start justify-center h-full max-w-7xl mx-auto px-6">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">
+            {t.heroTitle}
+          </h1>
+          <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl">
+            {t.heroSubtitle}
+          </p>
+          <button className="bg-green-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-green-600">
+            {t.searchBtn}
+          </button>
+        </div>
 
-      {/* 搜索 + 卡片 */}
+        {/* 语言切换按钮 */}
+        <div className="fixed top-4 right-4 z-50">
+          <Link href={currentLang === "en" ? "/cn" : "/"}>
+            <button className="bg-white text-gray-800 px-4 py-2 rounded-full shadow-lg hover:shadow-xl transition font-semibold">
+              {currentLang === "en" ? "中文" : "English"}
+            </button>
+          </Link>
+        </div>
+      </section>
+
+      {/* 搜索框 + 卡片 */}
       <section className="py-16 bg-gray-50">
         <div className="mx-auto max-w-7xl px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8">
-            {t.title}
-          </h2>
-          <p className="text-lg text-gray-600 mb-12">{t.subtitle}</p>
-
           <div className="flex justify-center mb-12 max-w-2xl mx-auto">
             <input
               type="text"
@@ -57,7 +80,7 @@ export default function Home() {
             </button>
           </div>
 
-          <h3 className="text-2xl md:text-3xl font-semibold mb-8">
+          <h3 className="text-3xl font-bold mb-8">
             {t.popular}
           </h3>
 
@@ -68,7 +91,7 @@ export default function Home() {
                   <div className="bg-gray-200 border-2 border-dashed rounded-xl w-full h-48" />
                   <div className="p-4 text-center">
                     <h4 className="text-xl font-bold">
-                      {lang === "en" ? country.en : country.cn}
+                      {currentLang === "en" ? country.en : country.cn}
                     </h4>
                     <p className="text-gray-600">{t.cardSubtitle}</p>
                   </div>
