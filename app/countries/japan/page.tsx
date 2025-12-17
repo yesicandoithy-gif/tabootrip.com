@@ -2,7 +2,7 @@ import React from "react";
 
 export default function JapanPage() {
   return (
-    <div className="max-container py-16 px-6">
+<div className="mx-auto max-w-7xl px-6 py-16">
       <h1 className="text-4xl md:text-5xl font-bold text-center mb-8">Japan Travel Etiquette & Taboos</h1>
       <p className="text-center text-lg text-gray-600 mb-12">Essential Do's and Don'ts for a respectful and enjoyable trip</p>
 
