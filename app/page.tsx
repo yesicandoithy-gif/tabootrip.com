@@ -1,5 +1,8 @@
+"use client";
+
 import React, { useState } from "react";
 import Link from "next/link";
+import Hero from "@/components/Hero/Hero";  // 你提供的路径，绝对正确
 
 const countries = [
   { href: "/countries/japan", en: "Japan", cn: "日本" },
@@ -13,11 +16,11 @@ const countries = [
 ];
 
 export default function Home() {
-  const [lang, setLang] = useState("en");
+  const [lang, setLang] = useState<"en" | "cn">("en");
 
   const t = {
-    title: lang === "en" ? "Avoid Cultural Taboos Abroad" : "避免国外文化禁忌",
-    subtitle: lang === "en" ? "Your Guide to Travel Etiquette & Cultural Tips Worldwide" : "全球旅行礼仪与文化提示指南",
+    heroTitle: lang === "en" ? "Avoid Cultural Taboos Abroad" : "避免国外文化禁忌",
+    heroSubtitle: lang === "en" ? "Your Guide to Travel Etiquette & Cultural Tips Worldwide" : "全球旅行礼仪与文化提示指南",
     searchPlaceholder: lang === "en" ? "Search Countries..." : "搜索国家...",
     searchBtn: lang === "en" ? "Search" : "搜索",
     popular: lang === "en" ? "Popular Destinations" : "热门目的地",
@@ -38,14 +41,14 @@ export default function Home() {
         </button>
       </div>
 
-      {/* 搜索框 + 热门国家 */}
+      {/* 搜索框 + 热门国家卡片 */}
       <section className="py-16 bg-gray-50">
         <div className="mx-auto max-w-7xl px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-8">
-            {t.title}
+            {t.heroTitle}
           </h2>
           <p className="text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
-            {t.subtitle}
+            {t.heroSubtitle}
           </p>
 
           <div className="flex justify-center mb-12 max-w-2xl mx-auto">
@@ -67,7 +70,7 @@ export default function Home() {
             {countries.map((country) => (
               <Link key={country.href} href={country.href}>
                 <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition cursor-pointer">
-                  <div className="bg-gray-200 border-2 border-dashed rounded-xl w-full h-48" /> {/* 临时占位图 */}
+                  <div className="bg-gray-200 h-48 w-full" /> {/* 临时占位图，后期换真实图片 */}
                   <div className="p-4 text-center">
                     <h4 className="text-xl font-bold">
                       {lang === "en" ? country.en : country.cn}
