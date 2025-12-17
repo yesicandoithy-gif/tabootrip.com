@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import Hero from "@/components/Hero/Hero";  // 你提供的路径，绝对正确
+import { Hero } from "@/components/Hero/Hero";  // 改成命名导入 { Hero }
 
 const countries = [
   { href: "/countries/japan", en: "Japan", cn: "日本" },
@@ -70,7 +70,7 @@ export default function Home() {
             {countries.map((country) => (
               <Link key={country.href} href={country.href}>
                 <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition cursor-pointer">
-                  <div className="bg-gray-200 h-48 w-full" /> {/* 临时占位图，后期换真实图片 */}
+                  <div className="bg-gray-200 h-48 w-full" /> {/* 临时占位图 */}
                   <div className="p-4 text-center">
                     <h4 className="text-xl font-bold">
                       {lang === "en" ? country.en : country.cn}
