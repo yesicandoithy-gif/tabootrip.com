@@ -2,13 +2,13 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Hero } from "@/components/Hero/Hero";  // 改成命名导入 { Hero }
+import { Hero } from "@/components/Hero/Hero";
 
 const countries = [
   { href: "/countries/japan", en: "Japan", cn: "日本" },
   { href: "/countries/thailand", en: "Thailand", cn: "泰国" },
   { href: "/countries/france", en: "France", cn: "法国" },
-  { href: "/countries/uae", en: "UAE", cn: "阿联酋" },
+  { href: "/countries/china", en: "China", cn: "中国" },  // 已改成 China
   { href: "/countries/india", en: "India", cn: "印度" },
   { href: "/countries/italy", en: "Italy", cn: "意大利" },
   { href: "/countries/usa", en: "USA", cn: "美国" },
@@ -25,6 +25,29 @@ export default function Home() {
     searchBtn: lang === "en" ? "Search" : "搜索",
     popular: lang === "en" ? "Popular Destinations" : "热门目的地",
     cardSubtitle: lang === "en" ? "Etiquette & Taboos" : "礼仪与禁忌",
+  };
+
+  const getCountryImage = (href: string) => {
+    switch (href) {
+      case "/countries/japan":
+        return "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=800&auto=format&fit=crop";
+      case "/countries/thailand":
+        return "https://images.unsplash.com/photo-1563492065599-3520f739c109?w=800&auto=format&fit=crop";
+      case "/countries/france":
+        return "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&auto=format&fit=crop";
+      case "/countries/china":
+        return "https://images.unsplash.com/photo-1534351590667-8c2c78d3e3b3?w=800&auto=format&fit=crop"; // 北京故宫
+      case "/countries/india":
+        return "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800&auto=format&fit=crop";
+      case "/countries/italy":
+        return "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=800&auto=format&fit=crop";
+      case "/countries/usa":
+        return "https://images.unsplash.com/photo-1501594907352-04cda37ebc9b?w=800&auto=format&fit=crop";
+      case "/countries/saudi-arabia":
+        return "https://images.unsplash.com/photo-1583251517746-5180f2f7f3d2?w=800&auto=format&fit=crop";
+      default:
+        return "https://images.unsplash.com/photo-1501594907352-04cda37ebc9b?w=800&auto=format&fit=crop";
+    }
   };
 
   return (
@@ -70,7 +93,11 @@ export default function Home() {
             {countries.map((country) => (
               <Link key={country.href} href={country.href}>
                 <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition cursor-pointer">
-                  <div className="bg-gray-200 h-48 w-full" /> {/* 临时占位图 */}
+                  <img
+                    src={getCountryImage(country.href)}
+                    alt={lang === "en" ? country.en : country.cn}
+                    className="w-full h-48 object-cover"
+                  />
                   <div className="p-4 text-center">
                     <h4 className="text-xl font-bold">
                       {lang === "en" ? country.en : country.cn}
