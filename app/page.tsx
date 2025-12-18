@@ -8,45 +8,33 @@ const countries = [
   { href: "/countries/japan", en: "Japan", cn: "日本" },
   { href: "/countries/thailand", en: "Thailand", cn: "泰国" },
   { href: "/countries/france", en: "France", cn: "法国" },
-  { href: "/countries/china", en: "China", cn: "中国" },  // 已改成 China
+  { href: "/countries/china", en: "China", cn: "中国" },
   { href: "/countries/india", en: "India", cn: "印度" },
   { href: "/countries/italy", en: "Italy", cn: "意大利" },
   { href: "/countries/usa", en: "USA", cn: "美国" },
   { href: "/countries/saudi-arabia", en: "Saudi Arabia", cn: "沙特阿拉伯" },
 ];
 
-export default function Home() {
-  const [lang, setLang] = useState<"en" | "cn">("en");
-
-  const t = {
-    heroTitle: lang === "en" ? "Avoid Cultural Taboos Abroad" : "避免国外文化禁忌",
-    heroSubtitle: lang === "en" ? "Your Guide to Travel Etiquette & Cultural Tips Worldwide" : "全球旅行礼仪与文化提示指南",
-    searchPlaceholder: lang === "en" ? "Search Countries..." : "搜索国家...",
-    searchBtn: lang === "en" ? "Search" : "搜索",
-    popular: lang === "en" ? "Popular Destinations" : "热门目的地",
-    cardSubtitle: lang === "en" ? "Etiquette & Taboos" : "礼仪与禁忌",
-  };
-
-  const getCountryImage = (href: string) => {
+const getCountryImage = (href: string) => {
   switch (href) {
     case "/countries/japan":
-      return "https://images.unsplash.com/photo-1493976040374-85c8e679f998?w=800&auto=format&fit=crop"; // 京都金阁寺秋景
+      return "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Mt_Fuji_from_Kitadake.jpg/800px-Mt_Fuji_from_Kitadake.jpg"; // 富士山经典
     case "/countries/thailand":
-      return "https://images.unsplash.com/photo-1552461711-7f8672c9f3e9?w=800&auto=format&fit=crop"; // 曼谷大皇宫金色屋顶
+      return "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Grand_Palace_Bangkok_Thailand.jpg/800px-Grand_Palace_Bangkok_Thailand.jpg"; // 曼谷大皇宫
     case "/countries/france":
-      return "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&auto=format&fit=crop"; // 巴黎埃菲尔铁塔黄昏（经典稳定）
+      return "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Eiffel_Tower_from_the_Tour_Eiffel_%281.jpg/800px-Eiffel_Tower_from_the_Tour_Eiffel_%281.jpg"; // 埃菲尔铁塔日景
     case "/countries/china":
-      return "https://images.unsplash.com/photo-1516549655169-df83a23e4a4b?w=800&auto=format&fit=crop"; // 北京故宫红墙金瓦
+      return "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Forbidden_City_Beijing_Great_Wall_of_China.jpg/800px-Forbidden_City_Beijing_Great_Wall_of_China.jpg"; // 故宫全景
     case "/countries/india":
-      return "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800&auto=format&fit=crop"; // 泰姬陵晨光（高清经典）
+      return "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Taj_Mahal_%28Edited%29.jpeg/800px-Taj_Mahal_%28Edited%29.jpeg"; // 泰姬陵晨光
     case "/countries/italy":
-      return "https://images.unsplash.com/photo-1523906834658-7f7c2a5a4d16?w=800&auto=format&fit=crop"; // 五渔村彩色房屋海景
+      return "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Colosseum_in_Rome%2C_Italy_-_April_2007.jpg/800px-Colosseum_in_Rome%2C_Italy_-_April_2007.jpg"; // 罗马斗兽场
     case "/countries/usa":
-      return "https://images.unsplash.com/photo-1501594907352-04cda37ebc9b?w=800&auto=format&fit=crop"; // 纽约自由女神像黄昏
+      return "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Statue_of_Liberty_2016.jpg/800px-Statue_of_Liberty_2016.jpg"; // 自由女神像
     case "/countries/saudi-arabia":
-      return "https://images.unsplash.com/photo-1583251517746-5180f2f7f3d2?w=800&auto=format&fit=crop"; // 麦加清真寺夜景
+      return "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Kaaba_in_Mecca_2023.jpg/800px-Kaaba_in_Mecca_2023.jpg"; // 麦加克尔白（尊重文化）
     default:
-      return "https://images.unsplash.com/photo-1501594907352-04cda37ebc9b?w=800&auto=format&fit=crop";
+      return "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Statue_of_Liberty_2016.jpg/800px-Statue_of_Liberty_2016.jpg";
   }
 };
 
