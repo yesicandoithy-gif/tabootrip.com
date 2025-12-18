@@ -18,7 +18,7 @@ const Navbar = () => {
       <div className="w-full flexBetween max-container padding-container z-30 py-2 lg:py-5">
         <Link href="/">
           <Image
-            src="/images/logo/logo.png"  // 替换为你上传的新 Logo 路径（如果放在 public/ 根目录则写 "/logo.png"）
+            src="/logo.png"  // 你的新 Logo 路径：public/logo.png → Next.js 中写成 "/logo.png"
             alt="TabooTrip Logo"
             width={150}
             height={143}
