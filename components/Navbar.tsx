@@ -1,10 +1,10 @@
 "use client";
+
 import { NAV_LINKS } from "@/constants";
 import Link from "next/link";
 import React, { useState } from "react";
 import Button from "./Button";
 import Image from "next/image";
-import logo from "./../public/images/logo/logo.png";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -17,14 +17,15 @@ const Navbar = () => {
     <nav className="absolute top-0 left-0 z-30 w-full">
       <div className="w-full flexBetween max-container padding-container z-30 py-2 lg:py-5">
         <Link href="/">
-          <img
+          <Image
+            src="/images/logo/logo.png"  // 替换为你上传的新 Logo 路径（如果放在 public/ 根目录则写 "/logo.png"）
+            alt="TabooTrip Logo"
+            width={150}
+            height={143}
             className="lg:w-[120px] h-auto w-[60px]"
-            src={logo.src}
-            alt="logo"
-            width="150"
-            height="143"
           />
         </Link>
+
         <ul className="hidden h-full gap-12 lg:flex">
           {NAV_LINKS.map((link) => (
             <Link
@@ -53,8 +54,8 @@ const Navbar = () => {
           <Image
             src="./bx-menu-alt-right.svg"
             alt="menu"
-            width="32"
-            height="32"
+            width={32}
+            height={32}
             className="inline-flex cursor-pointer invert lg:hidden"
           />
           <ul
