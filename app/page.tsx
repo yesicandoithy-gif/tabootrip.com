@@ -28,27 +28,27 @@ export default function Home() {
   };
 
   const getCountryImage = (href: string) => {
-    switch (href) {
-      case "/countries/japan":
-        return "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=800&auto=format&fit=crop";
-      case "/countries/thailand":
-        return "https://images.unsplash.com/photo-1563492065599-3520f739c109?w=800&auto=format&fit=crop";
-      case "/countries/france":
-        return "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&auto=format&fit=crop";
-      case "/countries/china":
-        return "https://images.unsplash.com/photo-1534351590667-8c2c78d3e3b3?w=800&auto=format&fit=crop"; // 北京故宫
-      case "/countries/india":
-        return "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800&auto=format&fit=crop";
-      case "/countries/italy":
-        return "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=800&auto=format&fit=crop";
-      case "/countries/usa":
-        return "https://images.unsplash.com/photo-1501594907352-04cda37ebc9b?w=800&auto=format&fit=crop";
-      case "/countries/saudi-arabia":
-        return "https://images.unsplash.com/photo-1583251517746-5180f2f7f3d2?w=800&auto=format&fit=crop";
-      default:
-        return "https://images.unsplash.com/photo-1501594907352-04cda37ebc9b?w=800&auto=format&fit=crop";
-    }
-  };
+  switch (href) {
+    case "/countries/japan":
+      return "https://images.unsplash.com/photo-1493976040374-85c8e679f998?w=800&auto=format&fit=crop"; // 京都金阁寺秋景
+    case "/countries/thailand":
+      return "https://images.unsplash.com/photo-1552461711-7f8672c9f3e9?w=800&auto=format&fit=crop"; // 曼谷大皇宫金色屋顶
+    case "/countries/france":
+      return "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&auto=format&fit=crop"; // 巴黎埃菲尔铁塔黄昏（经典稳定）
+    case "/countries/china":
+      return "https://images.unsplash.com/photo-1516549655169-df83a23e4a4b?w=800&auto=format&fit=crop"; // 北京故宫红墙金瓦
+    case "/countries/india":
+      return "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800&auto=format&fit=crop"; // 泰姬陵晨光（高清经典）
+    case "/countries/italy":
+      return "https://images.unsplash.com/photo-1523906834658-7f7c2a5a4d16?w=800&auto=format&fit=crop"; // 五渔村彩色房屋海景
+    case "/countries/usa":
+      return "https://images.unsplash.com/photo-1501594907352-04cda37ebc9b?w=800&auto=format&fit=crop"; // 纽约自由女神像黄昏
+    case "/countries/saudi-arabia":
+      return "https://images.unsplash.com/photo-1583251517746-5180f2f7f3d2?w=800&auto=format&fit=crop"; // 麦加清真寺夜景
+    default:
+      return "https://images.unsplash.com/photo-1501594907352-04cda37ebc9b?w=800&auto=format&fit=crop";
+  }
+};
 
   return (
     <>
