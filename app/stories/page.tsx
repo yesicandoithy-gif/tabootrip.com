@@ -1,5 +1,3 @@
-"use client";  // 必须加这一行，支持 onClick
-
 import React from "react";
 
 export default function StoriesPage() {
@@ -15,10 +13,11 @@ export default function StoriesPage() {
       </div>
 
       <div className="max-w-5xl mx-auto bg-white rounded-xl p-8 shadow-lg">
+        {/* Tally 嵌入 - 加 ?hideHeader=1 显示完整可输入表单 */}
         <iframe
-          src="https://tally.so/r/BzKGMR"
+          src="https://tally.so/r/BzKGMR?hideHeader=1"
           width="100%"
-          height="1800"
+          height="1600"
           frameBorder="0"
           className="rounded-lg"
         >
