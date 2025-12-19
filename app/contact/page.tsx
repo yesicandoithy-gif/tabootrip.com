@@ -1,3 +1,5 @@
+"use client";  // 必须加这一行，支持 onClick
+
 import React from "react";
 
 export default function ContactPage() {
