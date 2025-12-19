@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";  // 必须加这一行
 
 export default function StoriesPage() {
   return (
@@ -6,40 +7,24 @@ export default function StoriesPage() {
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-bold mb-8">Share Your Trip Story</h1>
         <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-          Have a funny, touching, or eye-opening travel moment? Share your cultural experiences, 
-          mishaps you avoided (thanks to TabooTrip!), or tips you've learned on the road. 
+          Have a funny, touching, or eye-opening travel moment? Share your cultural experiences,
+          mishaps you avoided (thanks to TabooTrip!), or tips you've learned on the road.
           Your story could help fellow travelers smile more and stress less!
         </p>
       </div>
 
-      <div className="max-w-3xl mx-auto bg-white rounded-xl p-8 shadow-lg">
-        <form className="space-y-6">
-          <div>
-            <label className="block text-lg font-semibold mb-2">Your Name (or nickname)</label>
-            <input type="text" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500" placeholder="e.g. Wanderlust Jane" />
-          </div>
-
-          <div>
-            <label className="block text-lg font-semibold mb-2">Country/Place of Your Story</label>
-            <input type="text" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500" placeholder="e.g. Thailand, Japan" />
-          </div>
-
-          <div>
-            <label className="block text-lg font-semibold mb-2">Your Story</label>
-            <textarea rows={8} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500" placeholder="Tell us your experience..."></textarea>
-          </div>
-
-          <div>
-            <label className="block text-lg font-semibold mb-2">Email (optional, for featured stories)</label>
-            <input type="email" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500" placeholder="your@email.com" />
-          </div>
-
-          <div className="text-center">
-            <button type="submit" className="bg-green-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-green-600">
-              Submit Your Story
-            </button>
-          </div>
-        </form>
+      <div className="max-w-5xl mx-auto bg-white rounded-xl p-8 shadow-lg">
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSfRHfsfHLGF4N_NEjD87Os4Pf_K1Qr2C_lkiJVL6ESUKUWYNA/viewform?embedded=true"
+          width="100%"
+          height="1400"
+          frameBorder="0"
+          marginHeight={0}
+          marginWidth={0}
+          className="rounded-lg"
+        >
+          正在加载…
+        </iframe>
 
         <p className="text-center text-gray-600 mt-8">
           We may feature the best stories on the site (with your permission)! Thank you for making TabooTrip a community.
@@ -47,9 +32,12 @@ export default function StoriesPage() {
       </div>
 
       <div className="mt-12 text-center">
-        <a href="/" className="bg-green-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-green-600 inline-block">
-          Back to Home
-        </a>
+        {/* 用 Link 包裹按钮，实现平滑跳转回主页 */}
+        <Link href="/">
+          <span className="bg-green-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-green-600 inline-block cursor-pointer transition">
+            Back to Home
+          </span>
+        </Link>
       </div>
     </div>
   );
