@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "next/link";  // 引入 Link，实现客户端平滑导航
+import Link from "next/link";
 
 export default function StoriesPage() {
   return (
@@ -32,12 +32,15 @@ export default function StoriesPage() {
       </div>
 
       <div className="mt-12 text-center">
-        <Link href="/">
-          <button className="bg-green-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-green-600 inline-block transition">
+        <Link href="/" legacyBehavior>
+          <a className="bg-green-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-green-600 inline-block transition shadow-lg">
             Back to Home
-          </button>
+          </a>
         </Link>
       </div>
+
+      {/* 测试文字：看到红字说明新版本加载成功 */}
+      <p className="text-red-500 text-center mt-8 font-bold">TEST: If you see this red text, new version is loaded!</p>
     </div>
   );
 }
