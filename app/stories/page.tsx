@@ -1,3 +1,5 @@
+"use client";  // 必须加这一行，支持 onClick
+
 import React from "react";
 
 export default function StoriesPage() {
@@ -13,11 +15,10 @@ export default function StoriesPage() {
       </div>
 
       <div className="max-w-5xl mx-auto bg-white rounded-xl p-8 shadow-lg">
-        {/* Tally 嵌入 - 支持投稿 + 自动显示所有投稿（像评论区） */}
         <iframe
           src="https://tally.so/r/BzKGMR"
           width="100%"
-          height="1800"  // 调高一点，确保表单和投稿区完整显示
+          height="1800"
           frameBorder="0"
           className="rounded-lg"
         >
