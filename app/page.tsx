@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";  // 引入 Link，实现客户端平滑导航
 
 export default function StoriesPage() {
   return (
@@ -6,20 +7,19 @@ export default function StoriesPage() {
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-bold mb-8">Share Your Trip Story</h1>
         <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-          Have a funny, touching, or eye-opening travel moment? Share your cultural experiences, 
-          mishaps you avoided (thanks to TabooTrip!), or tips you've learned on the road. 
+          Have a funny, touching, or eye-opening travel moment? Share your cultural experiences,
+          mishaps you avoided (thanks to TabooTrip!), or tips you've learned on the road.
           Your story could help fellow travelers smile more and stress less!
         </p>
       </div>
 
       <div className="max-w-5xl mx-auto bg-white rounded-xl p-8 shadow-lg">
-        {/* Google Form 嵌入 - 已加 ?embedded=true */}
-        <iframe 
+        <iframe
           src="https://docs.google.com/forms/d/e/1FAIpQLSfRHfsfHLGF4N_NEjD87Os4Pf_K1Qr2C_lkiJVL6ESUKUWYNA/viewform?embedded=true"
-          width="100%" 
-          height="1400"  // 调高一点，确保所有问题显示完整
-          frameBorder="0" 
-          marginHeight={0} 
+          width="100%"
+          height="1400"
+          frameBorder="0"
+          marginHeight={0}
           marginWidth={0}
           className="rounded-lg"
         >
@@ -32,9 +32,11 @@ export default function StoriesPage() {
       </div>
 
       <div className="mt-12 text-center">
-        <a href="/" className="bg-green-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-green-600 inline-block">
-          Back to Home
-        </a>
+        <Link href="/">
+          <button className="bg-green-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-green-600 inline-block transition">
+            Back to Home
+          </button>
+        </Link>
       </div>
     </div>
   );
