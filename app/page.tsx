@@ -1,97 +1,41 @@
-"use client";
+import React from "react";
 
-import React, { useState } from "react";
-import Link from "next/link";
-import { Hero } from "@/components/Hero/Hero";
-
-const countries = [
-  { href: "/countries/japan", en: "Japan", cn: "日本" },
-  { href: "/countries/thailand", en: "Thailand", cn: "泰国" },
-  { href: "/countries/france", en: "France", cn: "法国" },
-  { href: "/countries/china", en: "China", cn: "中国" },
-  { href: "/countries/india", en: "India", cn: "印度" },
-  { href: "/countries/italy", en: "Italy", cn: "意大利" },
-  { href: "/countries/usa", en: "USA", cn: "美国" },
-  { href: "/countries/saudi-arabia", en: "Saudi Arabia", cn: "沙特阿拉伯" },
-];
-
-const getCountryImage = (href: string) => {
-  switch (href) {
-    case "/countries/japan":
-      return "/images/countries/japan.jpg";
-    case "/countries/thailand":
-      return "/images/countries/thailand.jpg";
-    case "/countries/france":
-      return "/images/countries/france.jpg";
-    case "/countries/china":
-      return "/images/countries/china.jpg";
-    case "/countries/india":
-      return "/images/countries/india.jpg";
-    case "/countries/italy":
-      return "/images/countries/italy.jpg";
-    case "/countries/usa":
-      return "/images/countries/usa.jpg";
-    case "/countries/saudi-arabia":
-      return "/images/countries/saudi-arabia.jpg";
-    default:
-      return "/images/countries/japan.jpg";
-  }
-};
-
-export default function Home() {
-  const [lang, setLang] = useState<"en" | "cn">("en");
-
-  const t = {
-    heroTitle: lang === "en" ? "Ready for an Amazing Journey?" : "准备好开启一场奇妙旅程了吗？",
-    heroSubtitle: lang === "en" ? "Your Guide to Travel Etiquette & Cultural Tips Worldwide" : "全球旅行礼仪与文化小贴士指南",
-    searchPlaceholder: lang === "en" ? "Search Countries..." : "搜索国家...",
-    searchBtn: lang === "en" ? "Search" : "搜索",
-    popular: lang === "en" ? "Popular Destinations" : "热门目的地",
-    cardSubtitle: lang === "en" ? "Etiquette & Taboos" : "礼仪与禁忌",
-  };
-
+export default function StoriesPage() {
   return (
-    <>
-      <Hero />
-
-      {/* 语言切换按钮 */}
-      <div className="fixed top-4 right-4 z-50">
-        <button
-          onClick={() => setLang(lang === "en" ? "cn" : "en")}
-          className="bg-white text-gray-800 px-4 py-2 rounded-full shadow-lg hover:shadow-xl transition font-semibold"
-        >
-          {lang === "en" ? "中文" : "English"}
-        </button>
+    <div className="mx-auto max-w-7xl px-6 py-16 bg-gray-50 min-h-screen">
+      <div className="text-center mb-12">
+        <h1 className="text-4xl md:text-5xl font-bold mb-8">Share Your Trip Story</h1>
+        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          Have a funny, touching, or eye-opening travel moment? Share your cultural experiences, 
+          mishaps you avoided (thanks to TabooTrip!), or tips you've learned on the road. 
+          Your story could help fellow travelers smile more and stress less!
+        </p>
       </div>
 
-      {/* 热门国家卡片 */}
-      <section className="py-16 bg-gray-50">
-        <div className="mx-auto max-w-7xl px-6 text-center">
-          <h3 className="text-2xl md:text-3xl font-semibold mb-8">
-            {t.popular}
-          </h3>
+      <div className="max-w-5xl mx-auto bg-white rounded-xl p-8 shadow-lg">
+        {/* Google Form 嵌入 - 已加 ?embedded=true */}
+        <iframe 
+          src="https://docs.google.com/forms/d/e/1FAIpQLSfRHfsfHLGF4N_NEjD87Os4Pf_K1Qr2C_lkiJVL6ESUKUWYNA/viewform?embedded=true"
+          width="100%" 
+          height="1400"  // 调高一点，确保所有问题显示完整
+          frameBorder="0" 
+          marginHeight={0} 
+          marginWidth={0}
+          className="rounded-lg"
+        >
+          正在加载…
+        </iframe>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {countries.map((country) => (
-              <Link key={country.href} href={country.href}>
-                <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition cursor-pointer">
-                  <img
-                    src={getCountryImage(country.href)}
-                    alt={lang === "en" ? country.en : country.cn}
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="p-4 text-center">
-                    <h4 className="text-xl font-bold">
-                      {lang === "en" ? country.en : country.cn}
-                    </h4>
-                    <p className="text-gray-600">{t.cardSubtitle}</p>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-    </>
+        <p className="text-center text-gray-600 mt-8">
+          We may feature the best stories on the site (with your permission)! Thank you for making TabooTrip a community.
+        </p>
+      </div>
+
+      <div className="mt-12 text-center">
+        <a href="/" className="bg-green-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-green-600 inline-block">
+          Back to Home
+        </a>
+      </div>
+    </div>
   );
 }
