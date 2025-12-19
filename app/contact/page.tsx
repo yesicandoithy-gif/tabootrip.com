@@ -11,12 +11,19 @@ export default function ContactPage() {
       </div>
 
       <div className="max-w-2xl mx-auto bg-white rounded-xl p-8 shadow-lg text-center">
-        <p className="text-xl mb-6">
-          <strong>Email:</strong> your.email@example.com<br />
-          <strong>Business Cooperation:</strong> business@tabootrip.com<br />
-          <strong>WeChat:</strong> yourwechatid<br />
-          <strong>Instagram:</strong> @tabootrip<br />
-          <strong>Twitter/X:</strong> @tabootrip
+        <p className="text-xl mb-6 space-y-4">
+          <div>
+            <strong>Email:</strong> <a href="mailto:cavtim@gmail.com" className="text-green-600 hover:underline">cavtim@gmail.com</a>
+          </div>
+          <div>
+            <strong>Business Cooperation:</strong> <a href="mailto:cavtim@gmail.com" className="text-green-600 hover:underline">cavtim@gmail.com</a>
+          </div>
+          <div>
+            <strong>Instagram:</strong> <a href="https://www.instagram.com/bobolong288" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:underline">@bobolong288</a>
+          </div>
+          <div>
+            <strong>Twitter/X:</strong> <a href="https://twitter.com/smartTrave29340" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:underline">@smartTrave29340</a>
+          </div>
         </p>
 
         <p className="text-lg text-gray-600">
@@ -25,9 +32,12 @@ export default function ContactPage() {
       </div>
 
       <div className="mt-12 text-center">
-        <a href="/" className="bg-green-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-green-600 inline-block">
+        <button
+          onClick={() => window.location.href = "/"}
+          className="bg-green-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-green-600 inline-block transition shadow-lg"
+        >
           Back to Home
-        </a>
+        </button>
       </div>
     </div>
   );
