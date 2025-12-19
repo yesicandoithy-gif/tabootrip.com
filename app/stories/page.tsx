@@ -1,10 +1,10 @@
-"use client";  // 加这一行，变成 Client Component，支持 onClick
+"use client";  // 必须加，支持 onClick
 
 import React from "react";
 
 export default function StoriesPage() {
   const goHome = () => {
-    window.location.href = "/";  // 强制跳转回主页
+    window.location.href = "/";
   };
 
   return (
@@ -37,7 +37,7 @@ export default function StoriesPage() {
       </div>
 
       <div className="mt-12 text-center">
-        <button 
+        <button
           onClick={goHome}
           className="bg-green-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-green-600 inline-block transition shadow-lg"
         >
