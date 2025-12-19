@@ -1,7 +1,10 @@
 import React from "react";
-import Link from "next/link";
 
 export default function StoriesPage() {
+  const goHome = () => {
+    window.location.href = "/";  // 强制浏览器跳转回主页，绕过所有问题
+  };
+
   return (
     <div className="mx-auto max-w-7xl px-6 py-16 bg-gray-50 min-h-screen">
       <div className="text-center mb-12">
@@ -32,15 +35,17 @@ export default function StoriesPage() {
       </div>
 
       <div className="mt-12 text-center">
-        <Link href="/" legacyBehavior>
-          <a className="bg-green-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-green-600 inline-block transition shadow-lg">
-            Back to Home
-          </a>
-        </Link>
+        {/* 强制跳转按钮 */}
+        <button 
+          onClick={goHome}
+          className="bg-green-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-green-600 inline-block transition shadow-lg"
+        >
+          Back to Home
+        </button>
       </div>
 
-      {/* 测试文字：看到红字说明新版本加载成功 */}
-      <p className="text-red-500 text-center mt-8 font-bold">TEST: If you see this red text, new version is loaded!</p>
+      {/* 测试红字保留，确认新版本 */}
+      <p className="text-red-500 text-center mt-8 font-bold">TEST: New version loaded!</p>
     </div>
   );
 }
