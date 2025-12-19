@@ -18,23 +18,23 @@ const countries = [
 const getCountryImage = (href: string) => {
   switch (href) {
     case "/countries/japan":
-      return "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/The_most_popular_tourist_destination_in_Japan%2C_Mount_Fuji.jpg/800px-The_most_popular_tourist_destination_in_Japan%2C_Mount_Fuji.jpg"; // 富士山樱花季
+      return "/images/countries/japan.jpg";
     case "/countries/thailand":
-      return "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Grand_Palace_Bangkok_Thailand.jpg/800px-Grand_Palace_Bangkok_Thailand.jpg"; // 曼谷大皇宫
+      return "/images/countries/thailand.jpg";
     case "/countries/france":
-      return "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Tour_Eiffel_%28Paris%29_-_panoramio.jpg/800px-Tour_Eiffel_%28Paris%29_-_panoramio.jpg"; // 埃菲尔铁塔日景
+      return "/images/countries/france.jpg";
     case "/countries/china":
-      return "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Forbidden_City_Beijing.jpg/800px-Forbidden_City_Beijing.jpg"; // 北京故宫
+      return "/images/countries/china.jpg";
     case "/countries/india":
-      return "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Taj_Mahal_%28Edited%29.jpeg/800px-Taj_Mahal_%28Edited%29.jpeg"; // 泰姬陵
+      return "/images/countries/india.jpg";
     case "/countries/italy":
-      return "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Colosseum_in_Rome%2C_Italy_-_April_2007.jpg/800px-Colosseum_in_Rome%2C_Italy_-_April_2007.jpg"; // 罗马斗兽场
+      return "/images/countries/italy.jpg";
     case "/countries/usa":
-      return "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Statue_of_Liberty_2016.jpg/800px-Statue_of_Liberty_2016.jpg"; // 自由女神像
+      return "/images/countries/usa.jpg";
     case "/countries/saudi-arabia":
-      return "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Kaaba_at_night.jpg/800px-Kaaba_at_night.jpg"; // 麦加克尔白夜景
+      return "/images/countries/saudi-arabia.jpg";
     default:
-      return "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Statue_of_Liberty_2016.jpg/800px-Statue_of_Liberty_2016.jpg";
+      return "/images/countries/japan.jpg";
   }
 };
 
