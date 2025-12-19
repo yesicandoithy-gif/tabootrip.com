@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "next/link";  // 必须加这一行
+import Link from "next/link";
 
 export default function StoriesPage() {
   return (
@@ -32,11 +32,11 @@ export default function StoriesPage() {
       </div>
 
       <div className="mt-12 text-center">
-        {/* 用 Link 包裹按钮，实现平滑跳转回主页 */}
-        <Link href="/">
-          <span className="bg-green-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-green-600 inline-block cursor-pointer transition">
+        {/* 可靠的 Back to Home 按钮：Link + legacyBehavior + a 标签 */}
+        <Link href="/" legacyBehavior>
+          <a className="bg-green-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-green-600 inline-block transition shadow-lg">
             Back to Home
-          </span>
+          </a>
         </Link>
       </div>
     </div>
