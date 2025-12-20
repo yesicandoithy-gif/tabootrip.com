@@ -36,13 +36,14 @@ export default function JapanPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-pink-50 to-green-50">
-      {/* Header 图片 */}
+      {/* Header 图片 - 使用本地上传的 fuji-header.jpg */}
       <div className="relative h-96 overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=1600&auto=format&fit=crop"
+          src="/images/fuji-header.jpg"  // 本地路径，100%秒显示
           alt="Mount Fuji, Japan"
           fill
           className="object-cover"
+          priority  // 优先加载 Header 图片
         />
         <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
           <h1 className="text-5xl md:text-7xl font-bold text-white text-center">Japan Etiquette & Taboos</h1>
