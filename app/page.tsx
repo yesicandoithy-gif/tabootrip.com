@@ -51,7 +51,6 @@ export default function Home() {
     searchBtn: lang === "en" ? "Search" : "搜索",
     popular: lang === "en" ? "Popular Destinations" : "热门目的地",
     cardSubtitle: lang === "en" ? "Etiquette & Taboos" : "礼仪与禁忌",
-    notFound: lang === "en" ? "Country not found yet – Coming soon! 😊" : "暂未收录该国家 – 敬请期待！😊",
   };
 
   const handleSearch = (e: React.FormEvent) => {
@@ -59,19 +58,11 @@ export default function Home() {
     const query = searchQuery.trim();
     if (!query) return;
 
-    const matched = countries.find(
-      (c) =>
-        c.en.toLowerCase() === query.toLowerCase() ||
-        c.cn === query ||
-        c.en.toLowerCase().includes(query.toLowerCase())
-    );
+    // 将输入转换为 slug 格式 (小写 + - 连接)
+    const slug = query.toLowerCase().replace(/\s+/g, "-");
 
-    if (matched) {
-      router.push(matched.href);
-    } else {
-      const slug = query.toLowerCase().replace(/\s+/g, "-");
-      router.push(`/countries/${slug}`);
-    }
+    // 直接跳转到 /countries/{slug}，由动态路由 [slug]/page.tsx 处理
+    router.push(`/countries/${slug}`);
   };
 
   return (
