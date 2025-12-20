@@ -1,6 +1,7 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function JapanPage() {
   const doItems = [
@@ -38,8 +39,8 @@ export default function JapanPage() {
       {/* Header 图片 */}
       <div className="relative h-96 overflow-hidden">
         <Image
-          src="https://www.cloud-europamundo.com/img/carousel/hd/Monte%20Fuji_20210321192312.jpg"  // 富士山美图
-          alt="Mount Fuji Japan"
+          src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=1600&auto=format&fit=crop"
+          alt="Mount Fuji, Japan"
           fill
           className="object-cover"
         />
@@ -67,7 +68,7 @@ export default function JapanPage() {
         </div>
 
         {/* Don'ts 卡片 */}
-        <div>
+        <div className="mb-16">
           <h2 className="text-4xl font-bold text-red-700 text-center mb-8">Don'ts 🙃👎</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {dontItems.map((item, index) => (
@@ -79,7 +80,7 @@ export default function JapanPage() {
           </div>
         </div>
 
-        <div className="mt-16 text-center">
+        <div className="text-center">
           <button
             onClick={() => window.location.href = "/"}
             className="bg-green-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-green-600 transition shadow-lg"
