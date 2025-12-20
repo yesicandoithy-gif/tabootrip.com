@@ -7,16 +7,11 @@ export default function DynamicCountryPage({ params }: { params: { country: stri
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-green-50">
-      {/* Header - 默认占位美图 */}
-      <div className="relative h-96 overflow-hidden bg-gray-200 flex items-center justify-center">
-        <div className="text-center">
-          <p className="text-3xl text-gray-600 mb-4">Coming Soon</p>
-          <p className="text-xl text-gray-500">Beautiful header image for {countryName}</p>
-        </div>
-        <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-          <h1 className="text-5xl md:text-7xl font-bold text-white text-center">
-            {countryName} Etiquette & Taboos
-          </h1>
+      {/* Header - 默认占位图 */}
+      <div className="relative h-96 overflow-hidden bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center">
+        <div className="text-center text-white">
+          <p className="text-4xl font-bold mb-4">Coming Soon</p>
+          <p className="text-2xl">Beautiful header for {countryName}</p>
         </div>
       </div>
 
@@ -30,16 +25,16 @@ export default function DynamicCountryPage({ params }: { params: { country: stri
             General tips: Be respectful, smile, learn "hello" and "thank you" in local language, and observe local customs.
           </p>
           <p className="text-lg text-gray-600">
-            Have experience in {countryName}? Share your story to help us build this page!
+            Have experience in {countryName}? Share your story to help us build this page faster!
           </p>
         </div>
 
-        <a
-          href="/stories"
+        <button
+          onClick={() => window.location.href = "/stories"}
           className="inline-block bg-green-500 text-white px-10 py-5 rounded-full text-xl font-semibold hover:bg-green-600 transition shadow-lg"
         >
           Share Your {countryName} Story
-        </a>
+        </button>
 
         <div className="mt-16">
           <button
