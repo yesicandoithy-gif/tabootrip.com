@@ -1,4 +1,4 @@
-"use client";  // 必须加这一行，支持 window.location
+"use client";
 
 import React from "react";
 import Link from "next/link";
@@ -16,7 +16,6 @@ const knownCountries = [
 ];
 
 export default function SearchPage() {
-  // 从 URL 获取搜索参数 q
   const params = new URLSearchParams(typeof window !== "undefined" ? window.location.search : "");
   const query = params.get("q") || "";
   const countryName = query
