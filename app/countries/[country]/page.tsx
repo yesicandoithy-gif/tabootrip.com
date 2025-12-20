@@ -7,11 +7,16 @@ export default function DynamicCountryPage({ params }: { params: { country: stri
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-green-50">
-      {/* Header - 默认占位图 */}
+      {/* Header - 渐变占位 + 标题 */}
       <div className="relative h-96 overflow-hidden bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center">
         <div className="text-center text-white">
           <p className="text-4xl font-bold mb-4">Coming Soon</p>
           <p className="text-2xl">Beautiful header for {countryName}</p>
+        </div>
+        <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+          <h1 className="text-5xl md:text-7xl font-bold text-white text-center">
+            {countryName} Etiquette & Taboos
+          </h1>
         </div>
       </div>
 
@@ -29,6 +34,7 @@ export default function DynamicCountryPage({ params }: { params: { country: stri
           </p>
         </div>
 
+        {/* 分享故事按钮 */}
         <button
           onClick={() => window.location.href = "/stories"}
           className="inline-block bg-green-500 text-white px-10 py-5 rounded-full text-xl font-semibold hover:bg-green-600 transition shadow-lg"
@@ -36,6 +42,7 @@ export default function DynamicCountryPage({ params }: { params: { country: stri
           Share Your {countryName} Story
         </button>
 
+        {/* Back to Home 按钮 */}
         <div className="mt-16">
           <button
             onClick={() => window.location.href = "/"}
