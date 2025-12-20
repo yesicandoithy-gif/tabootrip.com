@@ -1,41 +1,91 @@
+"use client";
+
 import React from "react";
+import Image from "next/image";
 
 export default function IndiaPage() {
+  const doItems = [
+    { icon: "😄👍", text: "Say 'Namaste' with hands together – warm welcome!" },
+    { icon: "😄👍", text: "Remove shoes before entering temples/homes." },
+    { icon: "😄👍", text: "Try street chaat – spicy delicious chaos! 🌶️" },
+    { icon: "😄👍", text: "Respect elders – touch feet for blessings." },
+    { icon: "😄👍", text: "Use right hand for eating/giving – left is no-go." },
+    { icon: "😄👍", text: "Bargain at markets – part of the fun!" },
+    { icon: "😄👍", text: "Dress modestly at religious sites." },
+    { icon: "😄👍", text: "Enjoy festivals – colors and joy everywhere!" },
+    { icon: "😄👍", text: "Try vegetarian food – incredible variety!" },
+    { icon: "😄👍", text: "Be patient – 'Indian time' is flexible." },
+    { icon: "😄👍", text: "Accept chai offers – hospitality supreme." },
+    { icon: "😄👍", text: "Head wobble means yes – learn it!" },
+  ];
+
+  const dontItems = [
+    { icon: "🙃👎", text: "Don't use left hand for eating/giving – cultural taboo!" },
+    { icon: "🙃👎", text: "Don't point feet at people – very disrespectful." },
+    { icon: "🙃👎", text: "Don't touch head casually – sacred part." },
+    { icon: "🙃👎", text: "Don't photograph without permission, especially women." },
+    { icon: "🙃👎", text: "Don't eat beef in many places – sacred animal." },
+    { icon: "🙃👎", text: "Don't wear shoes in temples – big offense." },
+    { icon: "🙃👎", text: "Don't PDA excessively – keep it private." },
+    { icon: "🙃👎", text: "Don't refuse food too strongly – hosts insist!" },
+    { icon: "🙃👎", text: "Don't be loud in sacred places." },
+    { icon: "🙃👎", text: "Don't litter – keep incredible India clean." },
+    { icon: "🙃👎", text: "Don't assume one culture – India is diverse!" },
+    { icon: "🙃👎", text: "Don't skip 'Dhanyavaad' thank you!" },
+  ];
+
   return (
-    <div className="mx-auto max-w-7xl px-6 py-16">
-      <h1 className="text-4xl md:text-5xl font-bold text-center mb-8">India Travel Etiquette & Taboos</h1>
-      <p className="text-center text-lg text-gray-600 mb-12">Essential Do's and Don'ts for a respectful journey in India</p>
-
-      <div className="grid md:grid-cols-2 gap-12">
-        <div className="bg-green-50 rounded-xl p-8 border border-green-200">
-          <h2 className="text-3xl font-bold text-green-800 mb-6">✓ Do's</h2>
-          <ul className="space-y-4 text-lg">
-            <li className="flex items-start"><span className="text-green-600 font-bold mr-3">•</span> Use "Namaste" greeting with palms together</li>
-            <li className="flex items-start"><span className="text-green-600 font-bold mr-3">•</span> Remove shoes before entering homes and temples</li>
-            <li className="flex items-start"><span className="text-green-600 font-bold mr-3">•</span> Dress modestly, especially at religious sites</li>
-            <li className="flex items-start"><span className="text-green-600 font-bold mr-3">•</span> Use right hand for eating and giving/receiving items</li>
-            <li className="flex items-start"><span className="text-green-600 font-bold mr-3">•</span> Accept offered tea or food as hospitality</li>
-            <li className="flex items-start"><span className="text-green-600 font-bold mr-3">•</span> Respect elders and use titles</li>
-          </ul>
-        </div>
-
-        <div className="bg-red-50 rounded-xl p-8 border border-red-200">
-          <h2 className="text-3xl font-bold text-red-800 mb-6">✗ Don'ts</h2>
-          <ul className="space-y-4 text-lg">
-            <li className="flex items-start"><span className="text-red-600 font-bold mr-3">•</span> Don't touch anyone with feet or point soles at people</li>
-            <li className="flex items-start"><span className="text-red-600 font-bold mr-3">•</span> Don't photograph people without permission</li>
-            <li className="flex items-start"><span className="text-red-600 font-bold mr-3">•</span> Don't display public affection</li>
-            <li className="flex items-start"><span className="text-red-600 font-bold mr-3">•</span> Don't touch sacred cows or disturb them</li>
-            <li className="flex items-start"><span className="text-red-600 font-bold mr-3">•</span> Don't wear shoes inside religious places</li>
-            <li className="flex items-start"><span className="text-red-600 font-bold mr-3">•</span> Don't discuss sensitive topics like caste openly</li>
-          </ul>
+    <div className="min-h-screen bg-gradient-to-b from-orange-50 to-pink-50">
+      <div className="relative h-96 overflow-hidden">
+        <Image
+          src="/images/india-header.jpg"
+          alt="Taj Mahal, India"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+          <h1 className="text-5xl md:text-7xl font-bold text-white text-center">India Etiquette & Taboos</h1>
         </div>
       </div>
 
-      <div className="mt-12 text-center">
-        <a href="/" className="bg-green-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-green-600 inline-block">
-          Back to Home
-        </a>
+      <div className="max-w-7xl mx-auto px-6 py-16">
+        <p className="text-xl text-center text-gray-700 mb-12">
+          Discover incredible India with these colorful tips – embrace the diversity and magic!
+        </p>
+
+        <div className="mb-16">
+          <h2 className="text-4xl font-bold text-green-700 text-center mb-8">Do's 😄👍</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {doItems.map((item, index) => (
+              <div key={index} className="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition">
+                <p className="text-4xl mb-4 text-center">{item.icon}</p>
+                <p className="text-lg text-gray-800 text-center">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mb-16">
+          <h2 className="text-4xl font-bold text-red-700 text-center mb-8">Don'ts 🙃👎</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {dontItems.map((item, index) => (
+              <div key={index} className="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition">
+                <p className="text-4xl mb-4 text-center">{item.icon}</p>
+                <p className="text-lg text-gray-800 text-center">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="text-center">
+          <button
+            onClick={() => window.location.href = "/"}
+            className="bg-green-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-green-600 transition shadow-lg"
+          >
+            Back to Home
+          </button>
+        </div>
       </div>
     </div>
   );
