@@ -1,4 +1,4 @@
-"use client";
+"use client";  // 必须加这一行，支持 onClick 交互
 
 import React from "react";
 
@@ -15,7 +15,6 @@ export default function DynamicCountryPage({ params }: { params: { country: stri
           <p className="text-4xl font-bold mb-4">Coming Soon</p>
           <p className="text-2xl">Beautiful header for {countryName}</p>
         </div>
-
         <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
           <h1 className="text-5xl md:text-7xl font-bold text-white text-center">
             {countryName} Etiquette & Taboos
