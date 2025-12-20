@@ -3,16 +3,19 @@
 import React from "react";
 
 export default function DynamicCountryPage({ params }: { params: { country: string } }) {
-  const countryName = decodeURIComponent(params.country).replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase());
+  const countryName = decodeURIComponent(params.country)
+    .replace(/-/g, " ")
+    .replace(/\b\w/g, (l) => l.toUpperCase());
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-green-50">
-      {/* Header - 渐变占位 + 标题 */}
+      {/* Header - 渐变背景 + 标题 */}
       <div className="relative h-96 overflow-hidden bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center">
-        <div className="text-center text-white">
+        <div className="text-center text-white z-10">
           <p className="text-4xl font-bold mb-4">Coming Soon</p>
           <p className="text-2xl">Beautiful header for {countryName}</p>
         </div>
+
         <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
           <h1 className="text-5xl md:text-7xl font-bold text-white text-center">
             {countryName} Etiquette & Taboos
