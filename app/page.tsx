@@ -68,9 +68,10 @@ export default function Home() {
     );
 
     if (matched) {
+      // 匹配到 → 跳转专用页面
       router.push(matched.href);
     } else {
-      // 未匹配到已有国家，生成 slug 跳转到动态路由 [slug]/page.tsx
+      // 未匹配 → 生成 slug 跳转动态 Coming Soon 页面
       const slug = query.toLowerCase().replace(/\s+/g, "-");
       router.push(`/countries/${slug}`);
     }
