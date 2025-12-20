@@ -58,17 +58,27 @@ export default function Home() {
     const query = searchQuery.trim();
     if (!query) return;
 
-    // 将输入转换为 slug 格式 (小写 + - 连接)
-    const slug = query.toLowerCase().replace(/\s+/g, "-");
+    // 先尝试匹配已有8个国家
+    const matched = countries.find(
+      (c) =>
+        c.en.toLowerCase() === query.toLowerCase() ||
+        c.cn === query ||
+        c.en.toLowerCase().includes(query.toLowerCase()) ||
+        c.cn.includes(query)
+    );
 
-    // 直接跳转到 /countries/{slug}，由动态路由 [slug]/page.tsx 处理
-    router.push(`/countries/${slug}`);
+    if (matched) {
+      router.push(matched.href);
+    } else {
+      // 未匹配到已有国家，生成 slug 跳转到动态路由 [slug]/page.tsx
+      const slug = query.toLowerCase().replace(/\s+/g, "-");
+      router.push(`/countries/${slug}`);
+    }
   };
 
   return (
     <>
       <Hero />
-
       {/* 语言切换按钮 */}
       <div className="fixed top-4 right-4 z-50">
         <button
@@ -78,7 +88,6 @@ export default function Home() {
           {lang === "en" ? "中文" : "English"}
         </button>
       </div>
-
       {/* 搜索框 + 热门国家卡片 */}
       <section className="py-16 bg-gray-50">
         <div className="mx-auto max-w-7xl px-6 text-center">
@@ -88,7 +97,6 @@ export default function Home() {
           <p className="text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
             {t.heroSubtitle}
           </p>
-
           {/* 搜索框 */}
           <form onSubmit={handleSearch} className="flex justify-center mb-16 max-w-2xl mx-auto">
             <input
@@ -105,11 +113,9 @@ export default function Home() {
               {t.searchBtn}
             </button>
           </form>
-
           <h3 className="text-2xl md:text-3xl font-semibold mb-8">
             {t.popular}
           </h3>
-
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {countries.map((country) => (
               <Link key={country.href} href={country.href}>
