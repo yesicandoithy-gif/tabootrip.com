@@ -1,4 +1,4 @@
-"use client";  // 必须加这一行，支持 onClick 交互
+"use client";  // 必须加这一行，支持 onClick
 
 import React from "react";
 
