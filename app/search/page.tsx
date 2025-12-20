@@ -1,4 +1,4 @@
-"use client";
+"use client";  // 必须加这一行，支持 window.location
 
 import React from "react";
 import Link from "next/link";
