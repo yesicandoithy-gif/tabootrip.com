@@ -19,23 +19,23 @@ const countries = [
 const getCountryImage = (href: string) => {
   switch (href) {
     case "/countries/japan":
-      return "/images/fuji-header.jpg";
+      return "/images/countries/japan.jpg";
     case "/countries/thailand":
-      return "/images/thailand-header.jpg";
+      return "/images/countries/thailand.jpg";
     case "/countries/france":
-      return "/images/france-header.jpg";
+      return "/images/countries/france.jpg";
     case "/countries/china":
-      return "/images/great-wall-header.jpg";
+      return "/images/countries/china.jpg";
     case "/countries/india":
-      return "/images/india-header.jpg";
+      return "/images/countries/india.jpg";
     case "/countries/italy":
-      return "/images/italy-header.jpg";
+      return "/images/countries/italy.jpg";
     case "/countries/usa":
-      return "/images/usa-header.jpg";
+      return "/images/countries/usa.jpg";
     case "/countries/saudi-arabia":
-      return "/images/saudi-header.jpg";
+      return "/images/countries/saudi-arabia.jpg";
     default:
-      return "/images/fuji-header.jpg";
+      return "/images/countries/japan.jpg";
   }
 };
 
@@ -80,6 +80,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+
       {/* 语言切换按钮 */}
       <div className="fixed top-4 right-4 z-50">
         <button
@@ -89,6 +90,7 @@ export default function Home() {
           {lang === "en" ? "中文" : "English"}
         </button>
       </div>
+
       {/* 搜索框 + 热门国家卡片 */}
       <section className="py-16 bg-gray-50">
         <div className="mx-auto max-w-7xl px-6 text-center">
@@ -98,6 +100,7 @@ export default function Home() {
           <p className="text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
             {t.heroSubtitle}
           </p>
+
           {/* 搜索框 */}
           <form onSubmit={handleSearch} className="flex justify-center mb-16 max-w-2xl mx-auto">
             <input
@@ -114,9 +117,11 @@ export default function Home() {
               {t.searchBtn}
             </button>
           </form>
+
           <h3 className="text-2xl md:text-3xl font-semibold mb-8">
             {t.popular}
           </h3>
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {countries.map((country) => (
               <Link key={country.href} href={country.href}>
